@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1173d4",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white">
+<div class="flex flex-col h-screen justify-between">
+<div class="flex-grow overflow-y-auto">
+<header class="sticky top-0 bg-background-light dark:bg-background-dark/70 backdrop-blur-sm z-10">
+<div class="flex items-center p-4">
+<button class="text-gray-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold flex-1 text-center pr-8">Translation Review</h1>
+</div>
+</header>
+<main class="p-4 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg">
+<h2 class="font-bold mb-2 text-gray-900 dark:text-white">Original Text</h2>
+<p class="text-gray-700 dark:text-gray-300" lang="ne">सुरक्षित, अफलाइन, एआई/एमएल-आधारित मोबाइल अनुप्रयोग</p>
+</div>
+<div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg">
+<h2 class="font-bold mb-2 text-gray-900 dark:text-white">Translated Text</h2>
+<p class="text-gray-700 dark:text-gray-300">Secure, offline, AI/ML-based mobile application</p>
+</div>
+</div>
+<div>
+<h2 class="font-bold mb-2 text-gray-900 dark:text-white">Feedback</h2>
+<textarea class="form-textarea w-full h-32 rounded-lg bg-background-light dark:bg-background-dark border-primary/30 dark:border-primary/50 focus:ring-primary focus:border-primary text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400" placeholder="Provide feedback or suggest corrections..."></textarea>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-primary text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">save</span>
+<span>Save Translation</span>
+</button>
+<button class="bg-primary/20 dark:bg-primary/30 text-primary font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+<span>New Translation</span>
+</button>
+</div>
+</main>
+</div>
+<footer class="border-t border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark sticky bottom-0">
+<nav class="flex justify-around p-2">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">upload</span>
+<span class="text-xs font-medium">Upload</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-xs font-medium">History</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-xs font-medium">Settings</span>
+</a>
+</nav>
+</footer>
+</div>
+
+</body></html>
