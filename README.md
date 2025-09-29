@@ -47,7 +47,7 @@ It's a complete ecosystem that goes beyond simple translation. It accurately dig
   * **Backend:** Python, Flask
   * **ML / AI:** Hugging Face Transformers, Tesseract OCR
   * **Database:** SQLite
-  * **Frontend:** HTML, CSS, Vanilla JavaScript
+  * **Frontend:** Flutter,dart
   * **Deployment:** Packaged as a standalone desktop application using PyInstaller.
 
 ## 🚀 Getting Started
