@@ -1,10 +1,6 @@
 # SIH25240
 AI/ML based text-to-text machine translation from Nepalese and Sinhalese to English
 
-Of course\! Here is a comprehensive and well-structured `README.md` file for your "Sahitya Setu" GitHub repository.
-
------
-
 # Sahitya Setu (The Literature Bridge) 🌉
 
 [](https://opensource.org/licenses/MIT)
