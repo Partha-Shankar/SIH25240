@@ -1,114 +1,170 @@
-# SIH25240
-AI/ML based text-to-text machine translation from Nepalese and Sinhalese to English
+# Sahitya Setu (SIH25240)
 
-# Sahitya Setu (The Literature Bridge) 🌉
+![Status: UI Prototype](https://img.shields.io/badge/Status-UI%20Prototype-4B5563?style=flat-square)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Smart India Hackathon](https://img.shields.io/badge/Smart%20India%20Hackathon-SIH25240-1F2937?style=flat-square)
 
-[](https://opensource.org/licenses/MIT)
-[](https://www.google.com/search?q=./CONTRIBUTING.md)
-[](https://www.python.org/downloads/)
+User interface prototype for **Sahitya Setu** ("The Literature Bridge"), a proposed offline-first application for translating Nepali and Sinhala documents into English. The concept was created for the Smart India Hackathon under problem statement SIH25240, AI/ML based text-to-text machine translation from Nepalese and Sinhalese to English.
 
-An offline-first, AI/ML-powered platform for translating and preserving the rich literary heritage of Nepal (Nepali) and Sri Lanka (Sinhalese). This project was developed for the Smart India Hackathon (SIH) to serve organizations like the National Technical Research Organisation (NTRO).
+## Overview
 
- \#\# 📜 About The Project
+A large body of literary and cultural heritage from Nepal and Sri Lanka remains in physical documents that are inaccessible to a global audience. Sahitya Setu is designed to bridge this gap by digitizing documents, translating them with attention to cultural context, and improving through user corrections, while keeping all data on the user's device.
 
-A vast amount of literary and cultural heritage from Nepal and Sri Lanka remains locked in physical documents, inaccessible to a global audience. "Sahitya Setu" is designed to bridge this gap.
+This repository contains the **user interface prototype**: twelve static mobile screens that define the application's end-to-end user journey. The OCR, translation, and storage components described under [Proposed Solution](#proposed-solution) are planned and are not part of this repository.
 
-It's a complete ecosystem that goes beyond simple translation. It accurately digitizes complex and even handwritten documents, translates them with cultural nuance, and uses a unique human-in-the-loop system to continuously improve itself—all while working completely offline to ensure data security and privacy.
+## Repository Contents
 
-## ✨ Key Features
+| Area | Contents |
+| --- | --- |
+| Screen layouts | 12 HTML files, one per screen |
+| Screen captures | 12 PNG images matching each layout |
+| Application logic | Not included; screens are static |
 
-  * **Advanced OCR Engine:**
+## Prototype Features
 
-      * Accurately recognizes complex scripts like Devanagari (Nepali) and Sinhala.
-      * Capable of digitizing **handwritten manuscripts** and historical documents.
-      * Intelligently handles varied print styles and complex page layouts.
+- Onboarding flow covering the welcome screen, sign-in, permissions, and language preferences
+- Document input for images and PDF files, presented with an offline, on-device processing message
+- Review screen for extracted text before translation
+- Translation review showing original and translated text, with a field for suggesting corrections
+- Translation history with search and with date and language filters
+- Settings for language preferences, security options, and data management
+- Consistent mobile layout with dark mode styling
 
-  * **Offline AI-Powered Translation:**
+## Technology Stack
 
-      * Utilizes powerful, pre-trained models (like Meta's NLLB) that run locally.
-      * Focuses on preserving cultural context, idioms, honorifics, and tone.
-      * Experimental "Poetry Mode" to maintain artistic integrity.
+| Component | Technology |
+| --- | --- |
+| Markup | HTML5 |
+| Styling | Tailwind CSS, loaded from a CDN |
+| Typography and icons | Inter and Material Symbols from Google Fonts, plus inline SVG icons |
 
-  * **Interactive Feedback Loop:**
+## Architecture and Workflow
 
-      * A dual-pane editor allows users to compare original and translated text side-by-side.
-      * Users can easily correct translations, and every correction is saved to a local SQLite database.
-      * This feedback creates a valuable parallel corpus to fine-tune and improve the model over time.
+The screens represent the following intended user journey:
 
-  * **Rich User Experience:**
+```mermaid
+flowchart LR
+    A[Welcome] --> B[Login or registration]
+    B --> C[Permissions]
+    C --> D[Setup preferences]
+    D --> E[Document input]
+    E --> F[Text extraction and review]
+    F --> G[Translation and feedback]
+    G --> H[History]
+```
 
-      * Export translations as `.txt` or bilingual `.pdf` files.
-      * Integrated Text-to-Speech (TTS) for audio output.
-      * AI-powered summarization for long documents.
-      * Built-in dictionary, transliteration tools, and a personal phrasebook.
+Settings are available from the main navigation alongside Upload and History.
 
-## 🛠️ Technology Stack
+## Project Structure
 
-  * **Backend:** Python, Flask
-  * **ML / AI:** Hugging Face Transformers, Tesseract OCR
-  * **Database:** SQLite
-  * **Frontend:** Flutter,dart
-  * **Deployment:** Packaged as a standalone desktop application using PyInstaller.
+```text
+SIH25240/
+├── welcome_screen/
+├── login/
+│   └── registration_screen/
+├── permissions_request/
+├── setup_preferences/
+├── document_upload_screen/
+├── feature_overview__document_input/
+├── text_extraction_and_review_screen/
+├── feature_overview__translate_&_improve/
+├── translation_display_and_feedback_screen/
+├── document_history_screen/
+├── settings_screen_1/
+├── settings_screen_2/
+└── README.md
+```
 
-## 🚀 Getting Started
+Each screen directory contains `code.html` and `screen.png`.
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+## Installation and Setup
 
-### Prerequisites
+No build step or package installation is required.
 
-You will need the following software installed on your system:
+```bash
+git clone https://github.com/Partha-Shankar/SIH25240.git
+cd SIH25240
+```
 
-  * Python (3.9+) & Pip
-  * Git
-  * Tesseract OCR Engine
-      * On Ubuntu: `sudo apt-get install tesseract-ocr`
-      * On macOS: `brew install tesseract`
-      * On Windows: Download from the [Tesseract installer page](https://www.google.com/search?q=https://github.com/UB-Mannheim/tesseract/wiki).
-  * Tesseract language packs for Nepali (`nep`) and Sinhalese (`sin`).
+An internet connection is needed to load Tailwind CSS and the web fonts from their CDNs.
 
-### Installation
+## Usage
 
-1.  **Clone the repository:**
+Open any screen's `code.html` file directly in a web browser. For example, start with `welcome_screen/code.html`. The screens are designed for a mobile viewport, so a browser's device emulation mode gives the most accurate preview.
 
-    ```sh
-    git clone https://github.com/your-username/sahitya-setu.git
-    cd sahitya-setu
-    ```
+## Technical Implementation
 
-2.  **Create and activate a virtual environment:**
+Each screen is a standalone HTML document with its Tailwind configuration defined inline, so a screen can be opened and edited on its own. The screens share the Inter typeface and a consistent visual style. Navigation controls and form elements are presentational.
 
-    ```sh
-    # For macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
+## Screenshots
 
-    # For Windows
-    python -m venv venv
-    .\venv\Scripts\activate
-    ```
+<table>
+  <tr>
+    <td align="center"><img src="welcome_screen/screen.png" width="220" alt="Welcome screen"><br>Welcome</td>
+    <td align="center"><img src="login/registration_screen/screen.png" width="220" alt="Login and registration screen"><br>Login and Registration</td>
+    <td align="center"><img src="permissions_request/screen.png" width="220" alt="Permissions request screen"><br>Permissions</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="setup_preferences/screen.png" width="220" alt="Setup preferences screen"><br>Setup Preferences</td>
+    <td align="center"><img src="document_upload_screen/screen.png" width="220" alt="Document upload screen"><br>Document Upload</td>
+    <td align="center"><img src="feature_overview__document_input/screen.png" width="220" alt="Document input screen"><br>Document Input</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="text_extraction_and_review_screen/screen.png" width="220" alt="Text extraction and review screen"><br>Text Extraction and Review</td>
+    <td align="center"><img src="feature_overview__translate_%26_improve/screen.png" width="220" alt="Translate and improve screen"><br>Translate and Improve</td>
+    <td align="center"><img src="translation_display_and_feedback_screen/screen.png" width="220" alt="Translation display and feedback screen"><br>Translation and Feedback</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="document_history_screen/screen.png" width="220" alt="Document history screen"><br>History</td>
+    <td align="center"><img src="settings_screen_1/screen.png" width="220" alt="Settings screen, first variant"><br>Settings (Variant 1)</td>
+    <td align="center"><img src="settings_screen_2/screen.png" width="220" alt="Settings screen, second variant"><br>Settings (Variant 2)</td>
+  </tr>
+</table>
 
-3.  **Install the required packages:**
+## Proposed Solution
 
-    ```sh
-    pip install -r requirements.txt
-    ```
+The capabilities and technologies in this section describe the intended full application. They are design goals and are not implemented in this repository.
 
-4.  **Download ML Models:**
+### Planned Capabilities
 
-      * The first time you run the application, the necessary translation models from Hugging Face will be downloaded and cached automatically. Ensure you have an internet connection for this initial setup.
+**OCR engine**
 
-5.  **Run the application:**
+- Recognition of the Devanagari (Nepali) and Sinhala scripts
+- Digitization of handwritten manuscripts and historical documents
+- Handling of varied print styles and complex page layouts
 
-    ```sh
-    python app.py
-    ```
+**Offline translation**
 
-    Navigate to `http://127.0.0.1:5000` in your web browser to use the application.
+- Pre-trained models, such as Meta's NLLB, running locally
+- Preservation of cultural context, idioms, honorifics, and tone
+- An experimental poetry mode intended to maintain artistic integrity
 
+**Interactive feedback loop**
 
+- A dual-pane editor for comparing original and translated text
+- Corrections saved to a local SQLite database
+- A growing parallel corpus for fine-tuning the model over time
 
-## 🙏 Acknowledgements
+**User experience**
 
-  * Smart India Hackathon (SIH)
-  * National Technical Research Organisation (NTRO)
-  * The creators of the NLLB and Tesseract projects.
+- Export as `.txt` or bilingual `.pdf` files
+- Text-to-speech output
+- Summarization of long documents
+- A built-in dictionary, transliteration tools, and a personal phrasebook
+
+### Planned Technology Stack
+
+| Component | Planned Technology |
+| --- | --- |
+| Backend | Python, Flask |
+| Machine learning | Hugging Face Transformers, Tesseract OCR |
+| Database | SQLite |
+| Frontend | Flutter, Dart |
+| Packaging | PyInstaller |
+
+## Acknowledgements
+
+- Smart India Hackathon (SIH)
+- National Technical Research Organisation (NTRO)
+- The creators of the NLLB and Tesseract projects
